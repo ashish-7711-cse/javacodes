@@ -1,0 +1,12 @@
+Every java applet inherites a set of default behaviours from the applet class . As a result when an applet is loaded it undergoesa series of changes. The applets states are following.
+1)Born on initialization state
+2)Running state 3) Ideal state; 4)Display state 5)Dead or destroyed state
+
+
+1)Initialisation State
+	Applets enters a initialisation state when it is loaded. This is achieved by calling init method of applet class. The aplet is born. At this stage we may do following things if require
+	1}create obj needed by objects
+	2}set up iunitial values;
+	3}Load images or fonts
+	4}set up colors
+	This state ocurs only ones in  applets life cycle

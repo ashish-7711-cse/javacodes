@@ -1,0 +1,39 @@
+import javax.swing.*;
+import jav.util.*;
+class AClass{
+	void Display()
+	{
+		Sysytem.out.println("AClass");
+	}
+}
+class BClass{
+{
+	void Display()
+	{
+		System.ouyt.prntln("BClass");
+	}
+}
+final class CClass extends BClass{
+	void Display()
+	{
+		System.ouyt.prntln("BClass");
+	}
+}
+public class DMD{
+	public static void main(String[]args)
+	{
+		AClass a =new AClass();
+		BClass a =new BClass();
+		CClass a =new CClass();
+		AClass ref =null;
+		ref =a;
+		a.Display();
+		ref = b;
+		b.Display();
+		ref= c;
+		ref.Dispaly();
+	}	
+}
+// IN Above program a refrence of type AClass called ref is declared The program then assinged a reference to each type of object to ref and uses that reference to invoke the methofd display. The version of Display method is ditermined by type of obj being referd to t
+	
+ 		 

@@ -1,0 +1,55 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import java.io.*;
+class EStudent implements Serializable
+{
+	int rno;
+	String nm;
+	double marks;
+	EStudent(int a, String b,double c)
+	{
+		rno = a;
+		nm = b;
+		marks = c;
+	}
+	void setData(int a, String b,double c)
+	{
+		rno = a;
+		nm = b;
+		marks = c;
+	}
+	public String toString()
+	{
+		String s= "Roll No:"+rno+"\nName:"+nm+"\nMarks:"+marks;
+		return s;
+	}
+}
+class StuAMD extends Dialog implements ActionListener, FocusListener
+{
+	int  no,i,n;
+	String nm ;
+	double mrk;
+	EStudent obj;
+	LikedList<EStudent>ls;
+	boolean rstate;  //true or false
+	String action;   //ADD/MOD/DEL
+	Label lno,lnm,lmr;
+	TextField tno,tnm,tmr;
+	Button bu,bb;
+	StuAMD(Frame prnt, String title, boolean state, LinkedList<EStudent>ls)
+	{
+		super(prnt,title,state)
+		this.ls= ls;
+		action = title;
+		rstate = false;
+		i=0; n = 0;
+		lno = new Label("Roll No:")
+		lnm = new Label("Name");
+		lmrk = new Label("MArks");
+		tno = new TextField(10);
+		tnm = new TextField(this);
+		tmrk =new TextField(15);
+		bu = new Button("Update");
+		bb = new Button("Back");
+	}	

@@ -1,0 +1,118 @@
+import javax.swing.*;
+import java.util.*;
+interface DataIO
+{
+	void setData(int d);
+	void Display();
+}
+class Employee implements DataIO
+{
+	int eno;
+	String enm;
+	Employee()
+	{
+		eno = 0 ;
+		enm = new String();
+	}
+	public void setData(int n)
+	{
+		eno = n;
+		enm = JOptionPane.showInputDialog(null,"Name");
+	}
+	public String toString()
+	{
+		String a ="No:"+eno+"Name"+enm;
+		return a;
+	}
+	public void Dispaly()
+	{
+		JOptionPane.showMessageDialog(null,toString());
+	}
+}
+class NewEmployee extends Employee implements DataIO,Comparable<NewEmployee>,Comparator<NewEmployee>
+{
+	int esalary;
+	String city;
+	String emobno;
+	NewEmployee()
+	{
+		super();
+		esalary = 0;
+		city = new String();
+		emobno = new String();
+	}
+	public String toString()
+	{
+		String  a = super.toString()+"Employee Salary:"+esalary+"City Name:"+city+"Mobile No:"+emobno;
+		return a;
+	}
+	public void Display()
+	{
+		JOptionPane.showMessageDialog(null,toString());
+	}
+	public void setData(int n)
+	{
+		super setData(n);
+		try
+		{
+			esalary= Integer.parseInt(JoptoinPane.showInputDialog(null,"Salary");
+		}
+		catch(Exception e){}
+		city = JOptionPane.showInputDialog(null,"City");
+		emobno = JOptionPane.showInputDialog(null,"Mobile no:");
+	}
+	public int compareTo(NewEmployee a)
+	{
+		return eno-a.eno;
+	}
+	public int compare(NewEmployee a, NewEmployee b)
+	{
+		return (a.enm).compareTo(b.enm);
+	}
+	public static Comparator<NewEmployee> CityName = new Comparator<NewEmployee>()
+	{
+		public int compare(NewEmployee a,NewEmployee b)
+		{
+			int res = (a.city).compareTo(b.city);
+			if(res==0)
+			{
+				return (a.eno-b.eno);
+			}
+			else
+				return res;
+		}
+	};
+	public static Comparator<NewEmployee> Mobileno = new Comparator<NewEmployee>()
+	{
+		public int compare(NewEmployee a,NewEmployee b)
+		{
+				return (a.mobno-b.mobno);
+		}
+	};
+	public static Comparator<NewEmployee> Salary = new Comparator<NewEmployee>()
+	{
+		public int compare(NewEmployee a,NewEmployee b)
+		{
+				return (a.esalary-b.esalary);
+		}
+	};
+	public static void man(String[]args)
+	{
+		LinkedList<NewEmployee>ls = new LinkedList<>
+		NewEmployee a =null;
+		int d;
+		while(true}
+		{
+			try {
+				no = Integer.parseInt(JOptionPane.showInputDialog(null,"No")
+			}
+			catch(Exception e){
+				if(no==0)
+			break;}
+			a=new NewEmployee()
+			a.setData(no);
+		}
+		int n= ls.size;
+		NewEmployee [] arr =new NewEmployee(n);
+		arr = ls.toArray(arr);
+
